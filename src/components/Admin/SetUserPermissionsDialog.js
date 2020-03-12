@@ -117,12 +117,6 @@ function SetUserPermissionsDialog({ children, ...props }) {
                                     labelPlacement="bottom"
                                 />
                                 <FormControlLabel
-                                    value={PERMISSION_IDS.ADMIN}
-                                    control={<Radio color="primary" />}
-                                    label="Admin"
-                                    labelPlacement="bottom"
-                                />
-                                <FormControlLabel
                                     value={PERMISSION_IDS.OWNER}
                                     control={<Radio color="primary" />}
                                     label="Owner"

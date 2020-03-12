@@ -12,6 +12,7 @@ import {
 } from '@material-ui/core';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import React from 'react';
+import '../App.css';
 
 const useStyles = makeStyles((theme) => ({
   '@global': {
@@ -86,6 +87,10 @@ function LoginPage({ setAuth, ...props }) {
             id="password"
             autoComplete="current-password"
           />
+          <div className="password-warning">
+            Passwords are not securely stored.<br />
+            Do not enter any currently used passwords.
+          </div>
           <Button type="submit" fullWidth variant="contained" color="primary">
             Sign In
           </Button>

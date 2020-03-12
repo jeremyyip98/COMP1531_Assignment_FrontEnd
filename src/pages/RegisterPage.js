@@ -122,6 +122,10 @@ function RegisterPage({ setAuth, ...props }) {
             value={values.password}
             onChange={handleChange('password')}
           />
+          <div className="password-warning">
+            Passwords are not securely stored.<br />
+            Do not enter any currently used passwords.
+          </div>
           <Button type="submit" fullWidth variant="contained" color="primary">
             Sign Up
           </Button>
