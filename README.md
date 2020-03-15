@@ -3,15 +3,15 @@
 ## On CSE Machines
 
 ```bash
-./install.sh
-./run.sh [BACKEND PORT] [FRONTEND PORT]
+sh install.sh
+sh run.sh [BACKEND PORT] [FRONTEND PORT]
 ```
 
 For example:
 
 ```bash
-./install.sh
-./run.sh 5000 3000
+sh install.sh
+sh run.sh 5000 3000
 ```
 
 The backend port is just an integer that is the port the flask server is CURRENTLY running on. The frontend port is the port you want your frontend to run on.
