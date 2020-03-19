@@ -44,7 +44,11 @@ function Channel({ channel_id, ...props }) {
         setOwners(owner_members);
         setName(name);
       })
-      .catch((err) => {});
+      .catch((err) => {
+        setMembers([]);
+        setOwners([]);
+        setName('');
+      });
   }
 
   const step = useStep(fetchChannelData, [channel_id, token], 2);
