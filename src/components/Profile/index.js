@@ -22,7 +22,8 @@ function Profile({ profile }) {
       .get(`/user/profile`, { params: { token, u_id: profile } })
       .then(({ data }) => {
         console.log(data);
-        setProfileDetails(data);
+        const { user } = data;
+        setProfileDetails(user);
       })
       .catch((err) => {
         console.error(err);
@@ -125,7 +126,7 @@ function Profile({ profile }) {
         <ListItem key={'img_url'}>
           <EditableFields
             editable={editable}
-            masterValue={profileDetails.img_url}
+            masterValue={profileDetails.profile_img_url}
             master={(passed_props) => (
               <TextField label={'img_url,x1,y1,x2,y2'} {...passed_props} />
             )}
