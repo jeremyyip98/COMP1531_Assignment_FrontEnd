@@ -47,14 +47,16 @@ function Message({
       })
       .then(({ data }) => {
         const {
-          email = '',
-          name_first = '',
-          name_last = '',
-          handle_str = '',
-          profile_img_url = '',
+          user: {
+            email = '',
+            name_first = '',
+            name_last = '',
+            handle_str = '',
+            profile_img_url = '',
+          },
         } = data;
         setName(`${name_first} ${name_last}`);
-        setImgUrl(`${profile_img_url}`)
+        setImgUrl(`${profile_img_url}`);
       })
       .catch((err) => {
         console.error(err);
