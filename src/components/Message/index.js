@@ -90,7 +90,7 @@ function Message({
               secondary={
                 <div>
                   {msgToList(message).map((msg, i) => (
-                    <p>{msg}</p>
+                    <p dangerouslySetInnerHTML={{__html: msg}}></p>
                   ))}
                 </div>
               }
