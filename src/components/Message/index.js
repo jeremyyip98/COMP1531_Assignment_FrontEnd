@@ -89,9 +89,7 @@ function Message({
               }
               secondary={
                 <div>
-                  {msgToList(message).map((msg, i) => (
-                    <p>{msg}</p>
-                  ))}
+                  <pre style={{ fontFamily: 'inherit' }}>{message}</pre>
                 </div>
               }
             />
