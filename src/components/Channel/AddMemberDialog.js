@@ -57,7 +57,7 @@ function AddMemberDialog({ channel_id, ...props }) {
     event.preventDefault();
     const u_id = selectedUser;
 
-    if (!u_id) return;
+    if (u_id == null) return;
 
     axios.post(`/channel/invite`, { token, u_id, channel_id })
       .then((response) => {
