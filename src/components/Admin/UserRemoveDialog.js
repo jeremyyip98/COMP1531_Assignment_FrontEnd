@@ -44,6 +44,11 @@ function UserRemoveDialog({ children, ...props }) {
         fetchUserData();
     }, []);
 
+    const handleRadioChange = event => {
+        const newPermissionId = parseInt(event.target.value,10);
+        setPermissionId(newPermissionId);
+    };
+
     const handleUserSelect = event => {
         const newUserId = parseInt(event.target.value,10);
         setSelectedUser(newUserId);
@@ -66,7 +71,7 @@ function UserRemoveDialog({ children, ...props }) {
         const permission_id = parseInt(permissionId,10);
 
         axios
-        .delete(`/admin/user/remove`, { token, u_id })
+        .post(`/admin/user/remove`, { token, u_id })
         .then(response => {
             console.log(response);
         })
