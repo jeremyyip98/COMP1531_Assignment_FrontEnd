@@ -3,6 +3,7 @@ import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import SetUserPermissionsDialog from './SetUserPermissionsDialog';
+import UserRemoveDialog from './UserRemoveDialog'
 
 export default function Admin() {
 
@@ -33,6 +34,9 @@ export default function Admin() {
         <SetUserPermissionsDialog>
             <MenuItem onClick={handleClose}>Set User Permissions</MenuItem>
         </SetUserPermissionsDialog>
+        <UserRemoveDialog>
+            <MenuItem onClick={handleClose}>Remove User</MenuItem>
+        </UserRemoveDialog>
         <MenuItem onClick={handleClose}>Close</MenuItem>
       </Menu>
     </div>
