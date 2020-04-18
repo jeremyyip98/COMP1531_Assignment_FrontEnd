@@ -17,12 +17,10 @@ import {
   InputLabel,
 } from "@material-ui/core";
 import AuthContext from "../../AuthContext";
-import { PERMISSION_IDS } from "../../utils/constants";
 
 function UserRemoveDialog({ children, ...props }) {
 
     const [open, setOpen] = React.useState(false);
-    const [permissionId, setPermissionId] = React.useState(PERMISSION_IDS.MEMBER);
     const [users, setUsers] = React.useState([]);
     const [selectedUser, setSelectedUser] = React.useState('');
     const token = React.useContext(AuthContext);
@@ -44,11 +42,6 @@ function UserRemoveDialog({ children, ...props }) {
         fetchUserData();
     }, []);
 
-    const handleRadioChange = event => {
-        const newPermissionId = parseInt(event.target.value,10);
-        setPermissionId(newPermissionId);
-    };
-
     const handleUserSelect = event => {
         const newUserId = parseInt(event.target.value,10);
         setSelectedUser(newUserId);
@@ -68,7 +61,6 @@ function UserRemoveDialog({ children, ...props }) {
         if (!event.target[0].value) return;
 
         const u_id = parseInt(event.target[0].value,10);
-        const permission_id = parseInt(permissionId,10);
 
         axios
         .post(`/admin/user/remove`, { token, u_id })
